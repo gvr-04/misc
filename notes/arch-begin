@@ -1,0 +1,21 @@
+super+q -> terminal
+super+c -> close active
+
+sudo pacman -Syu
+sudo pacman -S git firefox ranger
+change theme -> kitty +kitten themes	
+change font -> kitten choose-fonts
+press backspace to show hidden files in ranger
+copy default configs -> ranger --copy-config=all
+place in rc.conf:
+``` set preview_images_method kitty ``` [install python-pillow]
+``` set preview_images true ```
+
+screenshot:
+add the three files "screenselect screenactive and screenshot"
+make sure to install following "grim jq and slurp"
+dunst for notification to check if it works use "dunstify "It works"
+if it doesnot work check if "libnotify" is installed
+
+add the following lines to the hyprland.conf
+
