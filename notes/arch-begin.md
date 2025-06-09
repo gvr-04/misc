@@ -80,6 +80,7 @@ bind = control_r,3, exec, ~/scripts/scrn/screenselect
 ```
 
 
-## remap capslock to esc key (hyprland)
-
+## todo
+- [ ] add yay link
+- [ ] add waybar configs link
 
