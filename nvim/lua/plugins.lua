@@ -61,6 +61,7 @@ return {
 		    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
 		    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 		    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+			{ "<leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
 		},
 	},
 
@@ -151,8 +152,7 @@ return {
 		'nvim-lualine/lualine.nvim',
     	dependencies = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
-			require('lualine').setup()
-			options = { theme = "palenight" }
+			require('lualine').setup{options = { theme = "gruvbox" }}
 		end
 	},
 
