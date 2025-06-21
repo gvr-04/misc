@@ -27,7 +27,7 @@ return {
   				  	  	title = "Git status",
   				  	  	section = "terminal",
   				  	  	enabled = function()
-					  	    return Snacks.git.get_root() ~= nil
+							return Snacks.git.get_root() ~= nil
   				  	  	end,
   				  	  	cmd = "git status --short --branch --renames",
   				  	  	height = 5,
@@ -57,7 +57,7 @@ return {
 			words = { enabled = true },
 		},
 		keys = {
-			{ "<C-p>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+			{ "<leader>p", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
 		    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
 		    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 		    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
@@ -144,6 +144,16 @@ return {
 	{
 		"OXY2DEV/markview.nvim",
 		lazy = false,
+	},
+
+	-- lualine
+	{
+		'nvim-lualine/lualine.nvim',
+    	dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require('lualine').setup()
+			options = { theme = "palenight" }
+		end
 	},
 
 
