@@ -84,3 +84,4 @@ bind = control_r,3, exec, ~/scripts/scrn/screenselect
 ## todo
 - [ ] add yay link
 - [ ] add waybar configs link
+- [ ] add vim keybinds in a table

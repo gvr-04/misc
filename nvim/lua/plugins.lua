@@ -86,16 +86,16 @@ return {
 
 	-- smear cursor
 	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			smear_insert_mode = true,
-			-- cursor_color = "#ad363c",
-			stiffness = 0.9,
-			trailing_stiffness = 0.8,
-			-- trailing_exponent = 9,
-			-- hide_target_hack = true,
-			distance_stop_animation = 0.5
-		},
+		-- "sphamba/smear-cursor.nvim",
+		-- opts = {
+		-- 	smear_insert_mode = false,
+		-- 	-- cursor_color = "#ad363c",
+		-- 	stiffness = 0.9,
+		-- 	trailing_stiffness = 0.8,
+		-- 	-- trailing_exponent = 9,
+		-- 	-- hide_target_hack = true,
+		-- 	distance_stop_animation = 0.5
+		-- },
 	},
 	
 	-- colorscheme switcher
