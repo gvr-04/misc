@@ -4,7 +4,7 @@
 * to update and install basic packages
 ```shell
 sudo pacman -Syu 
-sudo pacman -S git firefox lazygit github-cli wl-clipboard less ttf-font-awesome python-pillow
+sudo pacman -S git firefox lazygit github-cli wl-clipboard less ttf-font-awesome ttf-jetbrains-mono python-pillow
 ```
 
 ## yay installation

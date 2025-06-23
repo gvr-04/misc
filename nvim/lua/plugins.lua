@@ -1,69 +1,69 @@
 return {
 
 	-- snacks
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		opts = {
-			bigfile = { enabled = true },
-			dashboard = { 
-				enabled = true, example = "advanced",
-				sections = {
-					{ section = "header" },
-					{
-						pane = 2,
-  				  	  	section = "terminal",
-  				  	  	cmd = "colorscript -e crunchbang-mini",
-  				  	  	height = 5,
-  				  	  	padding = 1,
-  				  	},
-  				  	{ section = "keys", gap = 1, padding = 5 },
-  				  	{ pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-  				  	{ pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-  				  	{
-						pane = 2,
-  				  	  	icon = " ",
-  				  	  	title = "Git status",
-  				  	  	section = "terminal",
-  				  	  	enabled = function()
-							return Snacks.git.get_root() ~= nil
-  				  	  	end,
-  				  	  	cmd = "git status --short --branch --renames",
-  				  	  	height = 5,
-  				  	  	padding = 1,
-  				  	  	ttl = 5 * 60,
-  				  	  	indent = 3,
-  				  	},
-  				  	{ section = "startup" },
-  				},
-			},
-			explorer = { enabled = true },
-			indent = { enabled = true },
-			input = { enabled = true },
-			picker = {
-				enabled = true,
-				sources = {
-					files = { hidden = true, ignored = true }
-				},
-				exclude = { ".local", ".cache", ".git", },
-
-			},
-			notifier = { enabled = true },
-			quickfile = { enabled = true },
-			scope = { enabled = true },
-			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
-			words = { enabled = true },
-		},
-		keys = {
-			{ "<leader>p", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-		    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-		    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-		    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-			{ "<leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
-		},
-	},
+	-- {
+	-- 	"folke/snacks.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- 	opts = {
+	-- 		bigfile = { enabled = true },
+	-- 		dashboard = { 
+	-- 			enabled = true, example = "advanced",
+	-- 			sections = {
+	-- 				{ section = "header" },
+	-- 				{
+	-- 					pane = 2,
+	--  				  	  	section = "terminal",
+	--  				  	  	cmd = "colorscript -e crunchbang-mini",
+	--  				  	  	height = 5,
+	--  				  	  	padding = 1,
+	--  				  	},
+	--  				  	{ section = "keys", gap = 1, padding = 5 },
+	--  				  	{ pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+	--  				  	{ pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+	--  				  	{
+	-- 					pane = 2,
+	--  				  	  	icon = " ",
+	--  				  	  	title = "Git status",
+	--  				  	  	section = "terminal",
+	--  				  	  	enabled = function()
+	-- 						return Snacks.git.get_root() ~= nil
+	--  				  	  	end,
+	--  				  	  	cmd = "git status --short --branch --renames",
+	--  				  	  	height = 5,
+	--  				  	  	padding = 1,
+	--  				  	  	ttl = 5 * 60,
+	--  				  	  	indent = 3,
+	--  				  	},
+	--  				  	{ section = "startup" },
+	--  				},
+	-- 		},
+	-- 		explorer = { enabled = true },
+	-- 		indent = { enabled = true },
+	-- 		input = { enabled = true },
+	-- 		picker = {
+	-- 			enabled = true,
+	-- 			sources = {
+	-- 				files = { hidden = true, ignored = true }
+	-- 			},
+	-- 			exclude = { ".local", ".cache", ".git", },
+	--
+	-- 		},
+	-- 		notifier = { enabled = true },
+	-- 		quickfile = { enabled = true },
+	-- 		scope = { enabled = true },
+	-- 		scroll = { enabled = true },
+	-- 		statuscolumn = { enabled = true },
+	-- 		words = { enabled = true },
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<leader>p", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+	-- 	    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+	-- 	    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+	-- 	    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+	-- 		{ "<leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+	-- 	},
+	-- },
 
 	-- blink
 	{
@@ -84,20 +84,6 @@ return {
 		opts_extend = { "sources.default" }
 	},
 
-	-- smear cursor
-	{
-		-- "sphamba/smear-cursor.nvim",
-		-- opts = {
-		-- 	smear_insert_mode = false,
-		-- 	-- cursor_color = "#ad363c",
-		-- 	stiffness = 0.9,
-		-- 	trailing_stiffness = 0.8,
-		-- 	-- trailing_exponent = 9,
-		-- 	-- hide_target_hack = true,
-		-- 	distance_stop_animation = 0.5
-		-- },
-	},
-	
 	-- colorscheme switcher
 	{
 		"zaldih/themery.nvim",
@@ -175,9 +161,50 @@ return {
  	 	  { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
  	 	  { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
  	 	  { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
- 	},
-}
+		},
+	},
 
+	-- dashboard
+	{
+		"goolord/alpha-nvim",
+		-- dependencies = { 'echasnovski/mini.icons' },
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+		  local startify = require("alpha.themes.startify")
+		  startify.file_icons.provider = "devicons"
+		  require("alpha").setup(
+			startify.config
+		  )
+		end,
+	 },
+
+	--neorg
+	{
+		"nvim-neorg/neorg",
+    	lazy = false,
+    	version = "*",
+		config = function()
+        require("neorg").setup {
+          load = {
+            ["core.defaults"] = {},
+            ["core.concealer"] = {},
+            ["core.dirman"] = {
+              config = {
+                workspaces = {
+					home = "~/myhome",
+					projects = "~/projects",
+					notes = "~/notes",
+                },
+                default_workspace = "notes",
+              },
+            },
+          },
+        }
+  
+        vim.wo.foldlevel = 99
+        vim.wo.conceallevel = 2
+      end,
+	}
 
 }
 
