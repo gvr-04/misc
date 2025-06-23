@@ -1,12 +1,20 @@
 ## miscellaneous
 * super+q -> terminal
 * super+c -> close active
-* sudo pacman -Syu -> to update
-* sudo pacman -S git firefox ranger
+* to update and install basic packages
+```shell
+sudo pacman -Syu 
+sudo pacman -S git firefox lazygit github-cli wl-clipboard less ttf-font-awesome python-pillow
+```
+
+## yay installation
+```shell
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si # builds with makepkg
+```
 
 ## hyprland
 * set in hyprland.conf:
-    * animation -> yes to no 
+
     * blur -> false 
     * shadow -> false
     * `force_default_wallpaper = 0`
@@ -18,7 +26,7 @@
     * to remap caps -> esc
 
 ```conf
-$fileManager = kitty ranger
+$fileManager = kitty python3 ~/ranger/ranger.py
 exec-once = dunst & hyprpaper & waybar
 bind = $mainMod,w,exec,firefox --private-window 
 bind = control_l,b,exec,killall waybar || waybar
@@ -28,16 +36,20 @@ input {
 	kb_options = caps:escape
 	}
 general {
-    border_size = 0
+    border_size = 1
     }
 ```
 
 ## terminal
 * change theme -> `kitty +kitten themes`	
 * change font -> `kitten choose-fonts`
-
 ## file manager (ranger)
-* install ranger-git from aur instead of pacman
+installation
+```shell
+git clone https://github.com/ranger/ranger/
+cd ranger
+python3 ./ranger.py
+```
 * copy default configs -> ranger --copy-config=all
 * press backspace to show hidden files in ranger
 ```conf
@@ -47,12 +59,11 @@ set show_hidden true
 map <F1> shell hyprctl hyprpaper reload ,%d/%f #pressing f1 will change the wallpaper
 ```
 * make sure `python-pillow` is installed
-* add this to `.bashrc` to make sure neovim opens as default text editor
+* add this to `.bashrc` to make sure neovim opens as default text editor or change editor -> neovim in `rifle.py`
 ```bash
 export EDITOR="nvim"
 alias st="shutdown -h now"
 ```
-
 ## neovim
 To install vim plug:
 ```shell
@@ -60,14 +71,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 run  `:PlugInstall`
-
-for markdown rendering add these to init.vim
+* for markdown rendering add these to init.vim
 ```vim
 "markdown
 let g:mkdp_auto_start = 1
 let g:mkdp_auto_close = 1
 ```
-
 ## screenshot
 * add the three files `screenselect`, `screenactive` and `screenshot`
 * make sure to install following `grim`, `jq` and `slurp`
@@ -79,9 +88,21 @@ bind = control_r,1, exec, ~/scripts/scrn/screenshot
 bind = control_r,2, exec, ~/scripts/scrn/screenactive 
 bind = control_r,3, exec, ~/scripts/scrn/screenselect 
 ```
-
-
+## github-cli
+login to the gh account using browser
+```shell
+gh auth login
+```
+## final .bashrc
+```bash
+clear
+alias sb="source .bashrc"
+alias sd="shutdown -a now"
+alias n="nvim"
+alias lg="lazygit"
+alias f="python3 ~/ranger/ranger.py"
+```
 ## todo
-- [ ] add yay link
+- [x] add yay link
 - [ ] add waybar configs link
 - [ ] add vim keybinds in a table
