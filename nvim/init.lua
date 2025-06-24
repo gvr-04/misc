@@ -11,6 +11,8 @@ vim.cmd([[nnoremap <C-l> <C-w>l]])
 vim.cmd([[vnoremap <C-c> "+y]])
 vim.cmd([[nnoremap <C-t> :Themery <CR>]])
 vim.cmd([[nnoremap <C-e> :e <C-R>=expand('%:p:h')<CR><CR>]])
+vim.cmd([[nnoremap <leader>nn :Neorg workspace<CR>]])
+vim.cmd([[nnoremap <leader>ni :Neorg index<CR>]])
 
 ---------------------------------------------------------------------------
 -- lazy.nvim
@@ -38,7 +40,6 @@ require("lazy").setup({
 	spec = {
 		import = "plugins",
   	},
-  	install = { colorscheme = { "habamax" } },
   	checker = { enabled = true },
 })
 
