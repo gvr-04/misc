@@ -1,5 +1,5 @@
 vim.cmd.set("nu rnu shiftwidth=4 tabstop=4 softtabstop=4 smartindent autoindent splitright splitbelow")
-vim.cmd.set("encoding=UTF-8 nobackup nowritebackup nocursorline splitright splitbelow nohlsearch")
+vim.cmd.set("encoding=UTF-8 nobackup nowritebackup nocursorline splitright splitbelow ")
 vim.cmd.set("foldmethod=indent foldlevel=99 foldenable")
 vim.opt.ignorecase = true
 vim.g.mapleader = " "
@@ -13,6 +13,7 @@ vim.cmd([[nnoremap <C-t> :Themery <CR>]])
 vim.cmd([[nnoremap <C-e> :e <C-R>=expand('%:p:h')<CR><CR>]])
 vim.cmd([[nnoremap <leader>nn :Neorg workspace<CR>]])
 vim.cmd([[nnoremap <leader>ni :Neorg index<CR>]])
+vim.cmd([[nnoremap <esc> :noh <CR>]])
 
 ---------------------------------------------------------------------------
 -- lazy.nvim

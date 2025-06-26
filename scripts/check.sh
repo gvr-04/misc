@@ -1,7 +1,31 @@
 #!/bin/bash
 # checks for packages installed or not
 
-packages=(git lazygit github-cli wl-clipboard less ttf-font-awesome ttf-jetbrains-mono python-pillow grim jq slurp libnotify hyprpaper neovim wl-clipboard udisks2)
+packages=(
+	# version control
+	git
+	lazygit
+	github-cli
+	# essentials
+	neovim
+	wl-clipboard
+	python-pillow
+	libnotify
+	grim
+	jq
+	slurp
+	hyprpaper
+	# fonts
+	noto-fonts-emoji
+	ttf-font-awesome
+	ttf-nerd-fonts-symbols
+	ttf-jetbrains-mono-nerd
+	ttf-dejavu
+	# optional
+	waybar
+	less
+	udisks2
+)
 missing=()
 
 for pkg in "${packages[@]}"; do

@@ -4,50 +4,49 @@
 * to update and install basic packages
 ```bash
 sudo pacman -Syu 
-sudo pacman -S git firefox lazygit github-cli wl-clipboard less ttf-font-awesome ttf-jetbrains-mono python-pillow
+check.sh # check for dependencies not installed
 ```
-
 ## yay installation
 ```bash
 pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si # builds with makepkg
 ```
-
 ## hyprland
-* set in hyprland.conf:
-
-    * blur -> false 
-    * shadow -> false
-    * `force_default_wallpaper = 0`
-    * togglesplit -> S
-    * killactive -> Q
-    * terminal -> RETURN
-    * move focus up, left, right, down -> k,h,l,j
+change the following in hyprland.conf:
+* aesthetics
+    * blur
+    * shadow
+    * `force_default_wallpaper`
+* functionality
     * comment out the special workspace
-    * to remap caps -> esc
 
+    |funtion|key|
+    |---|---|
+    |togglesplit|S|
+    |killactive|Q|
+    |terminal|RETURN|
+    |move focus up, left, right, down|k,h,l,j|
 ```conf
 $fileManager = kitty python3 ~/ranger/ranger.py
 exec-once = dunst & hyprpaper & waybar
-bind = $mainMod,w,exec,firefox --private-window 
-bind = control_l,b,exec,killall waybar || waybar
-bind = control_l,w,exec, killall hyprpaper || hyprpaper
 
 input {
 	kb_options = caps:escape
 	}
 general {
-    border_size = 1
+    border_size = 0
     }
-```
 
-## terminal
+bind = $mainMod,w,exec,firefox --private-window 
+bind = control_l,b,exec,killall waybar || waybar
+bind = control_l,w,exec, killall hyprpaper || hyprpaper
+```
+## terminal (kitty)
 * change theme -> `kitty +kitten themes`	
 * change font -> `kitten choose-fonts`
 * add this to kitty.conf
 ```conf
 window_padding_width 20
 ```
-
 ## file manager (ranger)
 installation
 ```bash
@@ -55,38 +54,21 @@ git clone https://github.com/ranger/ranger/
 cd ranger
 python3 ./ranger.py
 ```
-* copy default configs -> ranger --copy-config=all
 * press backspace to show hidden files in ranger
+* to obtain config files cp ranger/config to .config/ranger
+* add the following to rc.conf
 ```conf
 set preview_images_method kitty
 set preview_images true
 set show_hidden true
+map xc shell wl-copy < %f
 map <F1> shell hyprctl hyprpaper reload ,%d/%f #pressing f1 will change the wallpaper
 ```
-* make sure `python-pillow` is installed
-* add this to `.bashrc` to make sure neovim opens as default text editor or change editor -> neovim in `rifle.py`
-```bash
-export EDITOR="nvim"
-alias st="shutdown -h now"
-```
+* make sure neovim opens as default text editor or change editor -> neovim in `rifle.py`
 ## neovim
-To install vim plug:
-```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-run  `:PlugInstall`
-* for markdown rendering add these to init.vim
-```vim
-"markdown
-let g:mkdp_auto_start = 1
-let g:mkdp_auto_close = 1
-```
+just copy the `nvim` folder to the `.config` folder
 ## screenshot
-* add the three files `screenselect`, `screenactive` and `screenshot`
-* make sure to install following `grim`, `jq` and `slurp`
 * dunst for notification to check if it works use `dunstify "It works"`
-* if it doesnot work check if `libnotify` is installed
 * add the following lines to the `hyprland.conf`
 * refer to this link for [source](https://github.com/equk/dotfiles)
 * run `scrn.sh ?` to get help
@@ -103,11 +85,19 @@ gh auth login
 ## final .bashrc
 ```bash
 clear
+export EDITOR="nvim"
 alias sb="source .bashrc"
-alias sd="shutdown -a now"
 alias n="nvim"
 alias lg="lazygit"
 alias f="python3 ~/ranger/ranger.py"
+alias sd="systemctl poweroff"
+```
+## mount the server
+```bash
+mkdir ~/server
+mount -t cifs # make sure command works
+fuser # make sure command works
+sudo mount -t cifs //ip-address/share_point ~/server -o username=<your_username>,password=<your_password>
 ```
 ## check dependencies and install the rest
 run the script `check.sh`
