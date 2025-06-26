@@ -1,4 +1,5 @@
 #!/bin/bash
+# script to take Screenshot in differnt modes
 
 help()
 {

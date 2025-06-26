@@ -109,6 +109,8 @@ alias n="nvim"
 alias lg="lazygit"
 alias f="python3 ~/ranger/ranger.py"
 ```
+## check dependencies and install the rest
+run the script `check.sh`
 ## todo
 - [x] add yay link
 - [ ] add waybar configs link
