@@ -81,12 +81,13 @@ let g:mkdp_auto_close = 1
 * add the three files `screenselect`, `screenactive` and `screenshot`
 * make sure to install following `grim`, `jq` and `slurp`
 * dunst for notification to check if it works use `dunstify "It works"`
-* if it doesnot work check if "libnotify" is installed
+* if it doesnot work check if `libnotify` is installed
 * add the following lines to the `hyprland.conf`
+* refer to this link for [source](https://github.com/equk/dotfiles)
 ```conf
-bind = control_r,1, exec, ~/scripts/scrn/screenshot 
-bind = control_r,2, exec, ~/scripts/scrn/screenactive 
-bind = control_r,3, exec, ~/scripts/scrn/screenselect 
+bind = control_r,1, exec, ~/scrn.sh f   # screenshot of full screen/monitor
+bind = control_r,2, exec, ~/scrn.sh a   # screenshot of active window
+bind = control_r,3, exec, ~/scrn.sh s   # screenshot of a selected area
 ```
 ## github-cli
 login to the gh account using browser
