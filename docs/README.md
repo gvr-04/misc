@@ -2,13 +2,13 @@
 * super+q -> terminal
 * super+c -> close active
 * to update and install basic packages
-```shell
+```bash
 sudo pacman -Syu 
 sudo pacman -S git firefox lazygit github-cli wl-clipboard less ttf-font-awesome ttf-jetbrains-mono python-pillow
 ```
 
 ## yay installation
-```shell
+```bash
 pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si # builds with makepkg
 ```
 
@@ -45,7 +45,7 @@ general {
 * change font -> `kitten choose-fonts`
 ## file manager (ranger)
 installation
-```shell
+```bash
 git clone https://github.com/ranger/ranger/
 cd ranger
 python3 ./ranger.py
@@ -66,7 +66,7 @@ alias st="shutdown -h now"
 ```
 ## neovim
 To install vim plug:
-```shell
+```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
@@ -92,7 +92,7 @@ bind = control_r,3, exec, ~/scrn.sh s   # screenshot of a selected area
 ```
 ## github-cli
 login to the gh account using browser
-```shell
+```bash
 gh auth login
 ```
 ## final .bashrc
