@@ -43,6 +43,11 @@ general {
 ## terminal
 * change theme -> `kitty +kitten themes`	
 * change font -> `kitten choose-fonts`
+* add this to kitty.conf
+```conf
+window_padding_width 20
+```
+
 ## file manager (ranger)
 installation
 ```bash
