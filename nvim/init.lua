@@ -1,5 +1,5 @@
 vim.cmd.set("nu rnu shiftwidth=4 tabstop=4 softtabstop=4 smartindent autoindent splitright splitbelow")
-vim.cmd.set("encoding=UTF-8 nobackup nowritebackup nocursorline splitright splitbelow")
+vim.cmd.set("encoding=UTF-8 nobackup nowritebackup nocursorline splitright splitbelow nohlsearch")
 vim.cmd.set("foldmethod=indent foldlevel=99 foldenable")
 vim.opt.ignorecase = true
 vim.g.mapleader = " "
