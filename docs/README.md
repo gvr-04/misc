@@ -84,6 +84,7 @@ let g:mkdp_auto_close = 1
 * if it doesnot work check if `libnotify` is installed
 * add the following lines to the `hyprland.conf`
 * refer to this link for [source](https://github.com/equk/dotfiles)
+* run `scrn.sh ?` to get help
 ```conf
 bind = control_r,1, exec, ~/scrn.sh f   # screenshot of full screen/monitor
 bind = control_r,2, exec, ~/scrn.sh a   # screenshot of active window
