@@ -1,11 +1,11 @@
 return {
 
-	-- snacks
-	-- {
-	-- 	"folke/snacks.nvim",
-	-- 	priority = 1000,
-	-- 	lazy = false,
-	-- 	opts = {
+	  -- snacks
+	  -- {
+	  -- 	"folke/snacks.nvim",
+	  -- 	priority = 1000,
+	  -- 	lazy = false,
+	  -- 	opts = {
 	-- 		bigfile = { enabled = true },
 	-- 		dashboard = { 
 	-- 			enabled = true, example = "advanced",
@@ -119,18 +119,24 @@ return {
   		opts = {},
 	},
 
+	-- markdown
+	-- {
+	-- 	"OXY2DEV/markview.nvim",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- },
+	{
+		'MeanderingProgrammer/render-markdown.nvim',
+		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		opts = {},
+	},
+
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = 'master',
 		lazy = false,
 		build = ":TSUpdate"
-	},
-
-	-- markdown
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
 	},
 
 	-- lualine
@@ -143,7 +149,13 @@ return {
 					theme = "palenight",
 					section_separators = { left = '', right = ''},
 					component_separators = { left = '|', right = '|'},
-				}
+				},
+				sections = {
+					lualine_c = {
+						{ 'filename', path = 3 },
+					},
+					 lualine_x = {'fileformat', 'filetype'},
+				},
 			}
 		end
 	},
@@ -193,9 +205,9 @@ return {
                 workspaces = {
 					home = "~/myhome",
 					projects = "~/projects",
-					notes = "~/notes",
+					note = "~/notes",
                 },
-                default_workspace = "notes",
+                default_workspace = "note",
               },
             },
           },
