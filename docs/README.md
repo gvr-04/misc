@@ -15,7 +15,7 @@ change the following in hyprland.conf:
 * aesthetics
     * blur
     * shadow
-    * `force_default_wallpaper`
+    * animation
 * functionality
     * comment out the special workspace
 
