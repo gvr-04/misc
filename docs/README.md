@@ -97,7 +97,12 @@ alias sd="systemctl poweroff"
 mkdir ~/server
 mount -t cifs # make sure command works
 fuser # make sure command works
-sudo mount -t cifs //ip-address/share_point ~/server -o username=<your_username>,password=<your_password>
+sudo mount -t cifs //ip-address/share_point ~/server -o username=<your_username>,password=<your_password>,uid=<client_username>
+
+```
+add this to /etc/fstab
+```
+//ipaddr/share_point	/home/vamsi/server	cifs	username=<your_username>,password=<your_password>,uid=<client_username>
 ```
 ## check dependencies and install the rest
 run the script `check.sh`
