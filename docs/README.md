@@ -14,6 +14,7 @@ pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git
 change the following in hyprland.conf:
 * aesthetics
     * blur
+    * rounding
     * shadow
     * animation
 * functionality
@@ -91,6 +92,8 @@ alias n="nvim"
 alias lg="lazygit"
 alias f="python3 ~/ranger/ranger.py"
 alias sd="systemctl poweroff"
+
+eval "$(starship init bash)"
 ```
 ## mount the server
 ```bash
